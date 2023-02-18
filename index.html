@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>kusai</title>
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+      }
+
+      h1 {
+        font-weight: normal;
+        text-align: center;
+        letter-spacing: 1rem;
+      }
+
+      .flex-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .wide {
+        letter-spacing: 1.5rem;
+      }
+
+      .circle {
+        position: absolute;
+        margin: 0.7rem 0 0 7.05rem;
+        height: 3.2rem;
+        width: 2rem;
+        border-radius: 50%;
+        border: 0.16rem solid black;
+
+        animation: flip 1s infinite ease-in-out;
+      }
+
+      @keyframes flip {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="flex-container">
+      <h1>kus<span class="wide">a</span>ï</h1>
+      <div class="circle"></div>
+    </div>
+  </body>
+</html>
