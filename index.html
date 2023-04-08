@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>kusai</title>
     <style>
       body {
-        font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
       }
 
       h1 {
@@ -46,9 +46,15 @@
       }
 
       .items {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
         display: flex;
-        overflow-y: auto;
+        overflow-x: auto;
         width: 20rem;
+      }
+
+      .items::-webkit-scrollbar {
+        display: none;
       }
 
       .item {
@@ -60,32 +66,30 @@
         color: black;
       }
 
-      @media (any-hover: hover) {
-        .item:hover {
-          transition: 0.2s;
-          border-color: black;
-        }
-
-        .item:hover p {
-          transition: 0.2s;
-          color: black;
-        }
-      }
-
-      .item:active {
-          transition: 0.2s;
-          margin: 1.3rem 0rem 0.7rem 0.5rem;
-        }
-
       .item p {
         margin: -0.2rem 0 0.5rem 0;
-        transition: color 0.2s;
+        transition: 0.2s;
         color: gray;
       }
 
       .item img {
         max-width: 15rem;
         max-height: 10rem;
+      }
+
+      .item:hover {
+        transition: 0.2s;
+        border-color: black;
+      }
+
+      .item:hover p {
+        transition: 0.2s;
+        color: black;
+      }
+
+      .item:active {
+        margin: 1.3rem 0 0.7rem 0.5rem;
+        transition: 0.2s;
       }
 
       .badge {
@@ -117,9 +121,13 @@
           <p>me</p>
           <img src="https://s0.wp.com/mshots/v1/kus.ai/me/?w=240&h=160" />
         </a>
-        <a class="item" href="/-">
+        <a class="item" href="/text">
           <p>text</p>
-          <img src="https://s0.wp.com/mshots/v1/kus.ai/-/?w=240&h=160" />
+          <img src="https://s0.wp.com/mshots/v1/kus.ai/text/?w=240&h=160" />
+        </a>
+        <a class="item" href="/sketchbook">
+          <p>sketchbook</p>
+          <img src="https://s0.wp.com/mshots/v1/kus.ai/sketchbook/?w=240&h=160" />
         </a>
         <a class="item" href="/capsule">
           <p>capsule</p>
