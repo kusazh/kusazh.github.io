@@ -10,15 +10,15 @@
       }
 
       h1 {
-        font-weight: normal;
         letter-spacing: 1rem;
+        font-weight: normal;
       }
 
       .flex-container {
         display: flex;
-        justify-content: center;
         position: absolute;
         left: 0;
+        justify-content: center;
         width: 100%;
       }
 
@@ -32,12 +32,12 @@
       }
 
       .circle {
-        width: 2rem;
-        height: 3.2rem;
         margin: 1.1rem 0 0 -2.36rem;
-        animation: flip 1s infinite ease-in-out;
         border: 0.16rem solid black;
         border-radius: 100%;
+        width: 2rem;
+        height: 3.2rem;
+        animation: flip 1s infinite ease-in-out;
       }
 
       .menu {
@@ -46,11 +46,11 @@
       }
 
       .items {
+        display: flex;
+        width: 20rem;
+        overflow-x: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
-        display: flex;
-        overflow-x: auto;
-        width: 20rem;
       }
 
       .items::-webkit-scrollbar {
@@ -58,17 +58,17 @@
       }
 
       .item {
-        text-decoration-line: none;
-        margin: 1rem 0 1rem 0.5rem;
-        padding: 1rem;
         transition: 0.2s;
+        margin: 1rem 0 1rem 0.5rem;
         border: 1px solid gray;
+        padding: 1rem;
+        text-decoration-line: none;
         color: black;
       }
 
       .item p {
-        margin: -0.2rem 0 0.5rem 0;
         transition: 0.2s;
+        margin: -0.2rem 0 0.5rem 0;
         color: gray;
       }
 
@@ -77,19 +77,27 @@
         max-height: 10rem;
       }
 
-      .item:hover {
-        transition: 0.2s;
+      .item:hover,
+      .item:hover p,
+      .item:hover .tag {
         border-color: black;
-      }
-
-      .item:hover p {
-        transition: 0.2s;
         color: black;
       }
 
       .item:active {
         margin: 1.3rem 0 0.7rem 0.5rem;
+      }
+
+      .tag {
+        display: inline-block;
         transition: 0.2s;
+        margin: -0.2rem 0 0 0.2rem;
+        border: 1px solid gray;
+        border-radius: 1rem;
+        padding: 0 0.5rem 0.15rem 0.5rem;
+        color: grey;
+        font-size: 0.9rem;
+        font-variant-caps: small-caps;
       }
 
       .badge {
@@ -118,16 +126,28 @@
     <div class="flex-container menu">
       <div class="items">
         <a class="item" href="/me">
-          <p>me</p>
+          <p>
+            me
+            <span class="tag">homepage</span>
+          </p>
           <img src="https://s0.wp.com/mshots/v1/kus.ai/me/?w=240&h=160" />
         </a>
         <a class="item" href="/text">
-          <p>text</p>
+          <p>
+            text
+            <span class="tag">article</span>
+            <span class="tag">chinese</span>
+          </p>
           <img src="https://s0.wp.com/mshots/v1/kus.ai/text/?w=240&h=160" />
         </a>
         <a class="item" href="/sketchbook">
-          <p>sketchbook</p>
-          <img src="https://s0.wp.com/mshots/v1/kus.ai/sketchbook/?w=240&h=160" />
+          <p>
+            sketchbook
+            <span class="tag">design</span>
+          </p>
+          <img
+            src="https://s0.wp.com/mshots/v1/kus.ai/sketchbook/?w=240&h=160"
+          />
         </a>
         <a class="item" href="/capsule">
           <p>capsule</p>
@@ -139,7 +159,9 @@
         </a>
         <a class="item" href="/rose-colored">
           <p>rose-colored</p>
-          <img src="https://s0.wp.com/mshots/v1/kus.ai/rose-colored/?w=240&h=160" />
+          <img
+            src="https://s0.wp.com/mshots/v1/kus.ai/rose-colored/?w=240&h=160"
+          />
         </a>
       </div>
     </div>
