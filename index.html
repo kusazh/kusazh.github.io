@@ -1,176 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>kusai</title>
-    <style>
-      body {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>kusai</title>
+  <style>
+    body {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    }
+
+    h1 {
+      letter-spacing: 1rem;
+      font-weight: normal;
+    }
+
+    .flex-container {
+      display: flex;
+      position: absolute;
+      left: 0;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .logo {
+      top: 12.5%;
+    }
+
+    .ï {
+      display: inline-block;
+      text-indent: 0.5rem;
+    }
+
+    .circle {
+      margin: 1.1rem 0 0 -2.36rem;
+      border: 0.16rem solid black;
+      border-radius: 100%;
+      width: 2rem;
+      height: 3.2rem;
+      animation: flip 1s infinite ease-in-out;
+    }
+
+    .menu {
+      align-items: center;
+      height: 99%;
+    }
+
+    .items {
+      display: flex;
+      width: 20rem;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .items::-webkit-scrollbar {
+      display: none;
+    }
+
+    .item {
+      transition: 0.2s;
+      margin: 1rem 0 1rem 0.5rem;
+      border: 1px solid gray;
+      padding: 1rem;
+      text-decoration-line: none;
+      color: black;
+    }
+
+    .item p {
+      transition: 0.2s;
+      margin: -0.2rem 0 0.5rem 0;
+      color: gray;
+    }
+
+    .item img {
+      max-width: 15rem;
+      max-height: 10rem;
+    }
+
+    .item:hover,
+    .item:hover p,
+    .item:hover .tag {
+      border-color: black;
+      color: black;
+    }
+
+    .item:active {
+      margin: 1.3rem 0 0.7rem 0.5rem;
+    }
+
+    .more {
+      border-style: solid dashed solid dashed;
+    }
+
+    .tag {
+      display: inline-block;
+      transition: 0.2s;
+      margin: -0.2rem 0 0 0.2rem;
+      border: 1px solid gray;
+      border-radius: 1rem;
+      padding: 0 0.5rem 0.15rem 0.5rem;
+      color: grey;
+      font-size: 0.9rem;
+      font-variant-caps: small-caps;
+    }
+
+    .badge {
+      bottom: 12.5%;
+    }
+
+    @keyframes flip {
+      0% {
+        transform: rotateY(0deg);
       }
 
-      h1 {
-        letter-spacing: 1rem;
-        font-weight: normal;
+      100% {
+        transform: rotateY(360deg);
       }
+    }
+  </style>
+</head>
 
-      .flex-container {
-        display: flex;
-        position: absolute;
-        left: 0;
-        justify-content: center;
-        width: 100%;
-      }
-
-      .logo {
-        top: 12.5%;
-      }
-
-      .ï {
-        display: inline-block;
-        text-indent: 0.5rem;
-      }
-
-      .circle {
-        margin: 1.1rem 0 0 -2.36rem;
-        border: 0.16rem solid black;
-        border-radius: 100%;
-        width: 2rem;
-        height: 3.2rem;
-        animation: flip 1s infinite ease-in-out;
-      }
-
-      .menu {
-        align-items: center;
-        height: 99%;
-      }
-
-      .items {
-        display: flex;
-        width: 20rem;
-        overflow-x: auto;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-
-      .items::-webkit-scrollbar {
-        display: none;
-      }
-
-      .item {
-        transition: 0.2s;
-        margin: 1rem 0 1rem 0.5rem;
-        border: 1px solid gray;
-        padding: 1rem;
-        text-decoration-line: none;
-        color: black;
-      }
-
-      .item p {
-        transition: 0.2s;
-        margin: -0.2rem 0 0.5rem 0;
-        color: gray;
-      }
-
-      .item img {
-        max-width: 15rem;
-        max-height: 10rem;
-      }
-
-      .item:hover,
-      .item:hover p,
-      .item:hover .tag {
-        border-color: black;
-        color: black;
-      }
-
-      .item:active {
-        margin: 1.3rem 0 0.7rem 0.5rem;
-      }
-
-      .tag {
-        display: inline-block;
-        transition: 0.2s;
-        margin: -0.2rem 0 0 0.2rem;
-        border: 1px solid gray;
-        border-radius: 1rem;
-        padding: 0 0.5rem 0.15rem 0.5rem;
-        color: grey;
-        font-size: 0.9rem;
-        font-variant-caps: small-caps;
-      }
-
-      .badge {
-        bottom: 12.5%;
-      }
-
-      @keyframes flip {
-        0% {
-          transform: rotateY(0deg);
-        }
-
-        100% {
-          transform: rotateY(360deg);
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="flex-container logo">
-      <h1>
-        kusa<div class="ï">ï</div>
-      </h1>
-      <div class="circle"></div>
+<body>
+  <div class="flex-container logo">
+    <h1>
+      kusa<div class="ï">ï</div>
+    </h1>
+    <div class="circle"></div>
+  </div>
+  <div class="flex-container menu">
+    <div class="items">
+      <a class="item" href="/me">
+        <p>
+          me
+          <span class="tag">homepage</span>
+        </p>
+        <img src="https://s0.wp.com/mshots/v1/kus.ai/me/?w=240&h=160" />
+      </a>
+      <a class="item" href="/text">
+        <p>
+          text
+          <span class="tag">article</span>
+          <span class="tag">chinese</span>
+        </p>
+        <img src="https://s0.wp.com/mshots/v1/kus.ai/text/?w=240&h=160" />
+      </a>
+      <a class="item" href="/sketchbook">
+        <p>
+          sketchbook
+          <span class="tag">design</span>
+        </p>
+        <img src="https://s0.wp.com/mshots/v1/kus.ai/sketchbook/?w=240&h=160" />
+      </a>
+      <a class="item" href="/so-so">
+        <p>
+          so-so
+          <span class="tag">poetry</span>
+          <span class="tag">chinese</span>
+        </p>
+        <img src="https://s0.wp.com/mshots/v1/kus.ai/so-so/?w=240&h=160" />
+      </a>
+      <a class="item" href="/capsule">
+        <p>
+          capsule
+          <span class="tag">poetry</span>
+          <span class="tag">chinese</span>
+        </p>
+        <img src="https://s0.wp.com/mshots/v1/kus.ai/capsule/?w=240&h=160" />
+      </a>
+      <a class="item" href="/buhuime">
+        <p>buhuime</p>
+        <img src="https://s0.wp.com/mshots/v1/kus.ai/buhuime/?w=240&h=160" />
+      </a>
+      <a class="item more" href="https://github.com/kusazh">
+        <p>
+          more
+          <span class="tag">github</span>
+        </p>
+        <img src="https://s0.wp.com/mshots/v1/github.com/kusazh/?w=240&h=160" />
+      </a>
     </div>
-    <div class="flex-container menu">
-      <div class="items">
-        <a class="item" href="/me">
-          <p>
-            me
-            <span class="tag">homepage</span>
-          </p>
-          <img src="https://s0.wp.com/mshots/v1/kus.ai/me/?w=240&h=160" />
-        </a>
-        <a class="item" href="/text">
-          <p>
-            text
-            <span class="tag">article</span>
-            <span class="tag">chinese</span>
-          </p>
-          <img src="https://s0.wp.com/mshots/v1/kus.ai/text/?w=240&h=160" />
-        </a>
-        <a class="item" href="/sketchbook">
-          <p>
-            sketchbook
-            <span class="tag">design</span>
-          </p>
-          <img
-            src="https://s0.wp.com/mshots/v1/kus.ai/sketchbook/?w=240&h=160"
-          />
-        </a>
-        <a class="item" href="/capsule">
-          <p>capsule</p>
-          <img src="https://s0.wp.com/mshots/v1/kus.ai/capsule/?w=240&h=160" />
-        </a>
-        <a class="item" href="/buhuime">
-          <p>buhuime</p>
-          <img src="https://s0.wp.com/mshots/v1/kus.ai/buhuime/?w=240&h=160" />
-        </a>
-        <a class="item" href="/rose-colored">
-          <p>rose-colored</p>
-          <img
-            src="https://s0.wp.com/mshots/v1/kus.ai/rose-colored/?w=240&h=160"
-          />
-        </a>
-      </div>
-    </div>
-    <div class="flex-container badge">
-      <a href="https://notbyai.fyi"
-        ><img
-          src="Written-By-Human-Not-By-AI-Badge-white.svg"
-          alt="written by human, not by AI"
-      /></a>
-    </div>
-  </body>
+  </div>
+  <div class="flex-container badge">
+    <a href="https://notbyai.fyi"><img src="Written-By-Human-Not-By-AI-Badge-white.svg"
+        alt="written by human, not by AI" /></a>
+  </div>
+</body>
+
 </html>
