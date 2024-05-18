@@ -1,193 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>kusai</title>
-  <style>
-    body {
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-    }
-
-    h1 {
-      letter-spacing: 1rem;
-      font-weight: normal;
-    }
-
-    .flex-container {
-      display: flex;
-      position: absolute;
-      left: 0;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .logo {
-      top: 12.5%;
-    }
-
-    .ï {
-      display: inline-block;
-      text-indent: 0.5rem;
-    }
-
-    .circle {
-      margin: 1.1rem 0 0 -2.36rem;
-      border: 0.16rem solid black;
-      border-radius: 100%;
-      width: 2rem;
-      height: 3.2rem;
-      animation: flip 1s infinite ease-in-out;
-    }
-
-    .menu {
-      align-items: center;
-      height: 99%;
-    }
-
-    .items {
-      display: flex;
-      width: 20rem;
-      overflow-x: auto;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    .items::-webkit-scrollbar {
-      display: none;
-    }
-
-    .item {
-      transition: 0.2s;
-      margin: 1rem 0 1rem 0.5rem;
-      border: 1px solid gray;
-      padding: 1rem;
-      text-decoration-line: none;
-      color: black;
-    }
-
-    .item p {
-      transition: 0.2s;
-      margin: -0.2rem 0 0.5rem 0;
-      color: gray;
-    }
-
-    .item img {
-      max-width: 15rem;
-      max-height: 10rem;
-    }
-
-    .item:hover,
-    .item:hover p,
-    .item:hover .tag {
-      border-color: black;
-      color: black;
-    }
-
-    .item:active {
-      margin: 1.3rem 0 0.7rem 0.5rem;
-    }
-
-    .more {
-      border-style: solid dashed solid dashed;
-    }
-
-    .tag {
-      display: inline-block;
-      transition: 0.2s;
-      margin: -0.2rem 0 0 0.2rem;
-      border: 1px solid gray;
-      border-radius: 1rem;
-      padding: 0 0.5rem 0.15rem 0.5rem;
-      color: grey;
-      font-size: 0.9rem;
-      font-variant-caps: small-caps;
-    }
-
-    .badge {
-      bottom: 12.5%;
-    }
-
-    @keyframes flip {
-      0% {
-        transform: rotateY(0deg);
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kusai</title>
+    <style>
+      html,
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+        font-size: 10vw;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
       }
-
-      100% {
-        transform: rotateY(360deg);
+      header,
+      article,
+      section {
+        height: 100%;
       }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="flex-container logo">
-    <h1>
-      kusa<div class="ï">ï</div>
-    </h1>
-    <div class="circle"></div>
-  </div>
-  <div class="flex-container menu">
-    <div class="items">
-      <a class="item" href="/me">
-        <p>
-          me
-          <span class="tag">homepage</span>
-        </p>
-        <img src="https://s0.wp.com/mshots/v1/kus.ai/me/?w=240&h=160" />
-      </a>
-      <a class="item" href="/text">
-        <p>
-          text
-          <span class="tag">article</span>
-          <span class="tag">chinese</span>
-        </p>
-        <img src="https://s0.wp.com/mshots/v1/kus.ai/text/?w=240&h=160" />
-      </a>
-      <a class="item" href="/sketchbook">
-        <p>
-          sketchbook
-          <span class="tag">design</span>
-        </p>
-        <img src="https://s0.wp.com/mshots/v1/kus.ai/sketchbook/?w=240&h=160" />
-      </a>
-      <a class="item" href="/so-so">
-        <p>
-          so-so
-          <span class="tag">poetry</span>
-          <span class="tag">chinese</span>
-        </p>
-        <img src="https://s0.wp.com/mshots/v1/kus.ai/so-so/?w=240&h=160" />
-      </a>
-      <a class="item" href="/pill">
-        <p>
-          pill
-          <span class="tag">poetry</span>
-          <span class="tag">chinese</span>
-        </p>
-        <img src="https://s0.wp.com/mshots/v1/kus.ai/pill/?w=240&h=160" />
-      </a>
-      <a class="item" href="/boarding">
-        <p>
-          boarding
-          <span class="tag">design</span>
-        </p>
-        <img src="https://s0.wp.com/mshots/v1/kus.ai/boarding/?w=240&h=160" />
-      </a>
-      <a class="item more" href="https://github.com/kusazh">
-        <p>
-          more
-          <span class="tag">github</span>
-        </p>
-        <img src="https://s0.wp.com/mshots/v1/github.com/kusazh/?w=240&h=160" />
-      </a>
-    </div>
-  </div>
-  <div class="flex-container badge">
-    <a href="https://notbyai.fyi"><img src="Written-By-Human-Not-By-AI-Badge-white.svg"
-        alt="written by human, not by AI" /></a>
-  </div>
-</body>
-
+      header,
+      section {
+        display: flex;
+        align-items: center;
+      }
+      header,
+      img {
+        position: absolute;
+        pointer-events: none;
+      }
+      header {
+        margin-left: 1.5rem;
+      }
+      p {
+        font-size: calc(0.1rem + 12px);
+        margin-top: calc(-1rem - 12px);
+        scroll-snap-align: none;
+      }
+      p,
+      img,
+      footer {
+        text-align: center;
+        opacity: 0.2;
+      }
+      img {
+        width: calc(0.2rem + 18px);
+        left: calc(50% - 0.1rem - 9px);
+        margin-top: 0.8rem;
+      }
+      article {
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
+      section {
+        background-position: center right 1.5rem;
+        background-repeat: no-repeat;
+        background-size: 3rem;
+        scroll-snap-align: start;
+      }
+      section a {
+        color: inherit;
+        margin: 0 1.5rem 0 4rem;
+        text-decoration: none;
+        width: 100%;
+      }
+      footer {
+        font-size: 0.1rem;
+        margin-top: 0.5rem;
+      }
+      .me {
+        background-image: url("images/me.png");
+      }
+      .text {
+        background-image: url("images/text.png");
+      }
+      .sketchbook {
+        background-image: url("images/sketchbook.png");
+      }
+      .so-so {
+        background-image: url("images/so-so.png");
+      }
+      .pill {
+        background-image: url("images/pill.png");
+      }
+      .boarding {
+        background-image: url("images/boarding.png");
+      }
+      .more {
+        background-image: url("images/more.png");
+      }
+    </style>
+  </head>
+  <body>
+    <img alt="logo" src="images/logo.svg" />
+    <header>kusai</header>
+    <article>
+      <section class="me">
+        <a href="./me">me</a>
+      </section>
+      <p>“Personal Home Page”</p>
+      <section class="text">
+        <a href="https://kusai.bearblog.dev">text</a>
+      </section>
+      <p>“Chinese Articles”</p>
+      <section class="sketchbook">
+        <a href="./sketchbook">sketchbook</a>
+      </section>
+      <p>“Design Works”</p>
+      <section class="so-so">
+        <a href="./so-so">so-so</a>
+      </section>
+      <p>“Playable Poems”</p>
+      <section class="pill">
+        <a href="./pill">pill</a>
+      </section>
+      <p>“Poetic Dope”</p>
+      <section class="boarding">
+        <a href="./boarding">boarding</a>
+      </section>
+      <p>“Boarding Pass”</p>
+      <section class="more">
+        <a href="https://github.com/kusazh"><i>more</i></a>
+      </section>
+      <p>“GitHub Profile Page”</p>
+      <footer>
+        Made by Kusa Zhang Xingtian. Images by
+        <a href="https://www.irasutoya.com">いらすとや</a>.
+      </footer>
+    </article>
+  </body>
 </html>
