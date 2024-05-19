@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -58,10 +58,15 @@
         background-size: 3rem;
         scroll-snap-align: start;
       }
-      section a {
+      a {
         color: inherit;
-        margin: 0 1.5rem 0 4rem;
         text-decoration: none;
+      }
+      a:lang(ja) {
+        font-size: 90%;
+      }
+      section a {
+        margin: 0 1.5rem 0 4rem;
         width: 100%;
       }
       footer {
@@ -124,8 +129,8 @@
       </section>
       <p>“GitHub Profile Page”</p>
       <footer>
-        Made by Kusa Zhang Xingtian. Images by
-        <a href="https://www.irasutoya.com">いらすとや</a>.
+        Made by <a href="./me">Kusa Zhang Xingtian</a>. Images by
+        <a lang="ja" href="https://www.irasutoya.com">いらすとや</a>.
       </footer>
     </article>
   </body>
