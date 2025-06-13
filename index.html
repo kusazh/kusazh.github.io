@@ -10,110 +10,185 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FFFFFF" />
     <title>kusai</title>
     <style type="text/css">
+      :root {
+        --bg-color: white;
+        --primary-color: black;
+      }
+
       html,
       body {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-        font-size: 10vw;
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+        font-size: 10vw;
         overflow: hidden;
+        background-color: var(--bg-color);
       }
+
+      body * {
+        color: var(--primary-color);
+      }
+
+      label {
+        cursor: pointer;
+      }
+
+      label img,
+      footer {
+        position: absolute;
+        top: 0;
+      }
+
+      label img {
+        z-index: 1;
+      }
+
       header,
-      article,
+      main,
+      footer,
       h2 {
         height: 100%;
       }
+
       header,
       h2 {
         display: flex;
         align-items: center;
       }
-      header,
-      img {
-        position: fixed;
-        pointer-events: none;
-      }
-      header {
-        margin-left: 1.5rem;
-      }
-      p {
-        font-size: calc(0.1rem + 12px);
-        margin-top: calc(-1rem - 12px);
-      }
-      p,
-      img,
-      footer {
-        text-align: center;
-        opacity: 0.2;
-        scroll-snap-align: none;
-      }
-      img {
-        width: calc(0.2rem + 18px);
-        left: calc(50% - 0.1rem - 9px);
-        margin-top: 0.8rem;
-      }
-      article {
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-        scroll-snap-type: y mandatory;
-      }
+
       h1,
       h2 {
         font-size: 1rem;
         font-weight: normal;
         margin: 0;
       }
+
       h2 {
         background-position: center right 1.5rem;
         background-repeat: no-repeat;
         background-size: 3rem;
         scroll-snap-align: start;
       }
+
       h2 a {
         margin: 0 1.5rem 0 4rem;
         width: 100%;
       }
+
+      p,
+      img {
+        font-size: calc(0.1rem + 12px);
+        text-align: center;
+        opacity: 0.2;
+        scroll-snap-align: none;
+      }
+
       a {
         color: inherit;
         text-decoration: none;
       }
+
       a:lang(ja) {
         font-size: 90%;
       }
-      footer {
-        margin-top: 0.5rem;
-        font-size: calc(0.1rem + 3px);
+
+      img {
+        width: calc(0.2rem + 18px);
+        left: calc(50% - 0.1rem - 9px);
+        margin-top: 0.8rem;
       }
+
+      header,
+      img,
+      footer p {
+        position: fixed;
+      }
+
+      header {
+        margin-left: 1.5rem;
+      }
+
+      main {
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+      }
+
+      main p {
+        margin-top: calc(-1rem - 12px);
+      }
+
+      footer {
+        width: 100%;
+        background-color: var(--bg-color);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      footer p {
+        width: 100%;
+        top: calc(100% - 1rem - 12px);
+        margin: 0;
+        text-align: center;
+      }
+
       .me {
         background-image: url("images/me.png");
       }
+
       .text {
         margin-bottom: calc(-1.2rem - 12px);
         background-image: url("images/text.png");
       }
+
       .sketchbook {
         background-image: url("images/sketchbook.png");
       }
+
       .so-so {
         background-image: url("images/so-so.png");
       }
+
       .pill {
         background-image: url("images/pill.png");
       }
+
       .boarding {
         background-image: url("images/boarding.png");
       }
+
       .more {
         background-image: url("images/more.png");
       }
+
+      #toggle:checked ~ footer {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-color: black;
+          --primary-color: white;
+        }
+
+        label img {
+          filter: invert(1);
+        }
+      }
     </style>
   </head>
+
   <body>
-    <img alt="logo" src="images/logo.svg" />
-    <header><h1>kusai</h1></header>
-    <article>
+    <input type="checkbox" id="toggle" hidden />
+    <label for="toggle"><img alt="logo" src="images/logo.svg" /></label>
+    <header>
+      <h1>kusai</h1>
+    </header>
+    <main>
       <h2 class="me" id="me">
         <a href="./me">me</a>
       </h2>
@@ -146,10 +221,12 @@
         <a href="https://github.com/kusazh"><i>more</i></a>
       </h2>
       <p>“GitHub Profile Page”</p>
-      <footer>
+    </main>
+    <footer>
+      <p>
         Made by <a href="./me">Kusa Zhang Xingtian</a>. Images by
         <a lang="ja" href="https://www.irasutoya.com">いらすとや</a>.
-      </footer>
-    </article>
+      </p>
+    </footer>
   </body>
 </html>
