@@ -10,11 +10,6 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FFFFFF" />
     <title>kusai</title>
     <style type="text/css">
-      :root {
-        --bg-color: white;
-        --primary-color: black;
-      }
-
       html,
       body {
         width: 100%;
@@ -24,32 +19,22 @@
         font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
         font-size: 10vw;
         overflow: hidden;
-        background-color: var(--bg-color);
       }
 
       body * {
-        color: var(--primary-color);
         margin: 0;
-        line-height: 1;
-      }
-
-      label {
-        cursor: pointer;
-      }
-
-      label img,
-      footer {
-        position: absolute;
-        top: 0;
+        line-height: 1.2;
       }
 
       label img {
+        position: absolute;
+        top: 0;
+        cursor: pointer;
         z-index: 1;
       }
 
       header,
       main,
-      footer,
       h2 {
         height: 100%;
       }
@@ -64,7 +49,6 @@
       h2 {
         font-size: 1rem;
         font-weight: normal;
-        margin: 0;
       }
 
       h2 {
@@ -75,8 +59,8 @@
       }
 
       h2 a {
-        margin: 0 1.5rem 0 4rem;
         width: 100%;
+        margin: 0 1.5rem 0 4rem;
       }
 
       p,
@@ -99,13 +83,24 @@
       img {
         width: calc(0.2rem + 18px);
         left: calc(50% - 0.1rem - 9px);
-        margin-top: 0.8rem;
+        margin-top: 1rem;
       }
 
       header,
       img,
       footer p {
         position: fixed;
+      }
+
+      header,
+      main,
+      footer {
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      header,
+      main {
+        opacity: 1;
       }
 
       header {
@@ -119,20 +114,17 @@
       }
 
       main p {
-        margin-top: calc(-1rem - 12px);
+        margin-top: calc(-1rem - 14.4px);
       }
 
       footer {
-        width: 100%;
-        background-color: var(--bg-color);
         opacity: 0;
         pointer-events: none;
-        transition: opacity 0.5s ease-in-out;
       }
 
       footer p {
         width: 100%;
-        top: calc(100% - 1rem - 12px);
+        top: calc(100% - 1rem - 14.4px);
         text-align: center;
       }
 
@@ -141,7 +133,7 @@
       }
 
       .text {
-        margin-bottom: calc(-1.2rem - 12px);
+        margin-bottom: calc(-1rem - 28.8px);
         background-image: url("images/text.png");
       }
 
@@ -165,20 +157,14 @@
         background-image: url("images/more.png");
       }
 
+      #toggle:checked ~ header,
+      #toggle:checked ~ main {
+        opacity: 0;
+      }
+
       #toggle:checked ~ footer {
         opacity: 1;
         pointer-events: auto;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-color: black;
-          --primary-color: white;
-        }
-
-        label img {
-          filter: invert(1);
-        }
       }
     </style>
   </head>
