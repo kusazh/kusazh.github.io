@@ -19,6 +19,8 @@
     body * {
       font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
       font-size: 1rem;
+      padding: 0;
+      margin: 0;
     }
 
     header {
@@ -33,15 +35,13 @@
 
     table {
       border-collapse: collapse;
-      margin: 2rem 0 2rem 2.625rem;
+      margin: 2rem auto;
     }
 
     input,
     td {
       text-align: center;
       vertical-align: middle;
-      margin: 0;
-      padding: 0;
     }
 
     input {
@@ -61,6 +61,10 @@
 
     td.empty {
       background-color: gray;
+    }
+
+    td.hidden {
+      border: none;
     }
 
     td::before {
@@ -87,11 +91,11 @@
 
     h1,
     ol {
-      margin: 0 0 0.5rem 0;
+      margin-bottom: 0.5rem;
     }
 
     ol {
-      padding: 0 0 0 1rem;
+      padding-left: 1rem;
     }
 
     a {
@@ -112,13 +116,14 @@
       z-index: 2;
     }
 
-    article {
-      column-count: 2;
+    article,
+    p {
+      margin: 1rem 0;
     }
 
-    article,
-    footer {
-      margin: 0;
+    article {
+      margin: 0 0.5rem;
+      column-count: 2;
     }
 
     footer::before {
@@ -137,6 +142,7 @@
   </header>
   <table>
     <tr>
+      <td class="hidden"></td>
       <td class="empty"></td>
       <td class="empty"></td>
       <td data-num="1"><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
@@ -150,6 +156,7 @@
       <td class="empty"></td>
     </tr>
     <tr>
+      <td class="hidden"></td>
       <td data-num="2"><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d1 a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
@@ -163,6 +170,7 @@
       <td class="empty"></td>
     </tr>
     <tr>
+      <td class="hidden"></td>
       <td class="empty"></td>
       <td data-num="5"><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
@@ -176,6 +184,7 @@
       <td data-num="6"><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
     </tr>
     <tr>
+      <td class="hidden"></td>
       <td class="empty"></td>
       <td data-num="7"><input class="d5 a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d1 a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
@@ -189,6 +198,7 @@
       <td><input class="d6 a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
     </tr>
     <tr>
+      <td class="hidden"></td>
       <td class="empty"></td>
       <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
@@ -202,6 +212,7 @@
       <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
     </tr>
     <tr>
+      <td class="hidden"></td>
       <td class="empty"></td>
       <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
@@ -215,6 +226,7 @@
       <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
     </tr>
     <tr>
+      <td class="hidden"></td>
       <td class="empty"></td>
       <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
@@ -228,6 +240,7 @@
       <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
     </tr>
     <tr>
+      <td class="hidden"></td>
       <td class="empty"></td>
       <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
@@ -241,6 +254,7 @@
       <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
     </tr>
     <tr>
+      <td class="hidden"></td>
       <td class="empty"></td>
       <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
@@ -252,9 +266,10 @@
       <td><input class="d12 a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="hidden"><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
     </tr>
     <tr>
+      <td class="hidden"></td>
       <td class="empty"></td>
       <td class="empty"></td>
       <td class="empty"></td>
