@@ -13,6 +13,7 @@
   <style type="text/css">
     body {
       width: 22.5rem;
+      padding: 0 1rem;
       margin: 0 auto;
     }
 
@@ -24,7 +25,7 @@
     }
 
     header {
-      padding-top: 2.5rem;
+      padding-top: 2em;
       text-align: center;
     }
 
@@ -35,7 +36,18 @@
 
     table {
       border-collapse: collapse;
-      margin: 2rem auto;
+      margin: 1.5rem auto;
+    }
+
+    a {
+      color: initial;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: orange;
+      z-index: 2;
     }
 
     input,
@@ -70,38 +82,10 @@
     td::before {
       content: attr(data-num);
       position: absolute;
-      top: 0.1rem;
-      left: 0.1rem;
+      top: 0;
+      left: 1px;
       font-size: 0.75rem;
       z-index: 3;
-    }
-
-    span {
-      display: inline-block;
-      background-color: white;
-      width: calc(1.5rem - 4px);
-      height: 1.25rem;
-      margin: 2.5px;
-    }
-
-    h1,
-    li {
-      white-space: nowrap;
-    }
-
-    h1,
-    ol {
-      margin-bottom: 0.5rem;
-    }
-
-    ol {
-      padding-left: 1rem;
-    }
-
-    a {
-      color: initial;
-      white-space: nowrap;
-      text-decoration: none;
     }
 
     td a {
@@ -111,27 +95,54 @@
       z-index: 1;
     }
 
-    a:hover {
-      color: orange;
-      z-index: 2;
+    span {
+      display: inline-block;
+      background-color: white;
+      width: 1rem;
+      height: 1rem;
+      margin: 0.25rem calc(0.25rem + 1px) calc(0.25rem + 1px) 0.25rem;
+      line-height: 1rem;
     }
 
     article,
     p {
-      margin: 1rem 0;
+      margin-top: 1rem;
     }
 
     article {
-      margin: 0 0.5rem;
       column-count: 2;
+    }
+
+    h1,
+    ol {
+      margin-bottom: 0.5rem;
+    }
+
+    ol {
+      padding-left: 1.5rem;
+      break-after: column;
+    }
+
+    li {
+      white-space: nowrap;
+    }
+
+    footer {
+      color: gray;
     }
 
     footer::before {
       content: "—";
     }
 
-    footer {
-      color: gray;
+    @media screen and (max-width: 24.5rem) {
+      body {
+        width: auto;
+      }
+
+      li {
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -142,12 +153,12 @@
   </header>
   <table>
     <tr>
-      <td class="hidden"></td>
       <td class="empty"></td>
       <td class="empty"></td>
       <td data-num="1"><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
       <td class="empty"></td>
+      <td data-num="2"><input class="d2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
       <td class="empty"></td>
       <td class="empty"></td>
@@ -156,163 +167,188 @@
       <td class="empty"></td>
     </tr>
     <tr>
-      <td class="hidden"></td>
-      <td data-num="2"><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d1 a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td data-num="3"><input class="a2 d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td data-num="4"><input class="a2 d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="3"><input class="a3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1 a3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d2 a3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="4"><input class="a3 d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
       <td class="empty"></td>
     </tr>
     <tr>
-      <td class="hidden"></td>
       <td class="empty"></td>
-      <td data-num="5"><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
       <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
-      <td class="empty"></td>
-      <td class="empty"></td>
-      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
       <td class="empty"></td>
       <td><input class="d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td data-num="6"><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
     </tr>
     <tr>
-      <td class="hidden"></td>
       <td class="empty"></td>
-      <td data-num="7"><input class="d5 a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d1 a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td data-num="8"><input class="a7 d8" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td data-num="9"><input class="a7 d9" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td data-num="10"><input class="a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d4 a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d6 a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-    </tr>
-    <tr>
-      <td class="hidden"></td>
       <td class="empty"></td>
-      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td data-num="5"><input class="a5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d4 a5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="6"><input class="a5 d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td data-num="7"><input class="a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d4 a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="8"><input class="d8" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td data-num="9"><input class="d9" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d8" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td data-num="10"><input class="a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d4 a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="11"><input class="a10 d11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td data-num="12"><input class="a12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d9 a12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1 a12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d8 a12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td><input class="d11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td data-num="13"><input class="d13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td><input class="d9" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d8" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td data-num="14"><input class="d4 a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d11 a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d13 a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td><input class="d9" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
       <td><input class="d8" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td><input class="d13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
       <td><input class="d9" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td><input class="d8" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
       <td class="empty"></td>
-      <td><input class="d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
     </tr>
     <tr>
-      <td class="hidden"></td>
       <td class="empty"></td>
-      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d9" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
-      <td class="empty"></td>
-      <td class="empty"></td>
-      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="empty"></td>
-      <td class="empty"></td>
-      <td><input class="d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-    </tr>
-    <tr>
-      <td class="hidden"></td>
-      <td class="empty"></td>
-      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="empty"></td>
-      <td class="empty"></td>
-      <td data-num="11"><input class="a11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d3 a11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td data-num="12"><input class="a11 d12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="empty"></td>
-      <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-    </tr>
-    <tr>
-      <td class="hidden"></td>
-      <td class="empty"></td>
-      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="empty"></td>
-      <td class="empty"></td>
-      <td class="empty"></td>
-      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="empty"></td>
-      <td><input class="d12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="empty"></td>
-      <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-    </tr>
-    <tr>
-      <td class="hidden"></td>
-      <td class="empty"></td>
-      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="empty"></td>
-      <td class="empty"></td>
-      <td class="empty"></td>
-      <td data-num="13"><input class="d3 a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="d12 a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="hidden"><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-    </tr>
-    <tr>
-      <td class="hidden"></td>
+      <td><input class="d8" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
       <td class="empty"></td>
       <td class="empty"></td>
       <td class="empty"></td>
       <td class="empty"></td>
       <td class="empty"></td>
-      <td class="empty"></td>
-      <td class="empty"></td>
-      <td><input class="d12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="empty"></td>
+      <td><input class="d13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
     </tr>
   </table>
   <article>
     <h1>Across</h1>
     <ol>
-      <li value="2">A book Figma hates.</li>
-      <li value="7">Chinese characters.</li>
-      <li value="10">Neither good nor bad.</li>
-      <li value="11">Red or blue, or pink.</li>
-      <li value="13">Where host this page.</li>
-      <br>
-      <br>
-      <br>
+      <li value="3">A book Figma hates</li>
+      <li value="5">Chinese characters</li>
+      <li value="7">The shorter, the pricier</li>
+      <li value="10">Red or blue, or pink</li>
+      <li value="12">Neither good nor bad</li>
+      <li value="14">Who hosts this page</li>
     </ol>
     <h1>Down</h1>
     <ol>
-      <li value="1">Verse of verses.</li>
-      <li value="3">A pass to be printed.</li>
-      <li value="4">Kusa’s smell.</li>
-      <li value="5">Scattered rains.</li>
-      <li value="6">Our Inner Space.</li>
-      <li value="8">Ong Wen.</li>
-      <li value="9">I were you.</li>
-      <li value="12">When greatness happens.</li>
+      <li value="1">Verse of verses</li>
+      <li value="2">Ongwen</li>
+      <li value="4">A pass to be printed</li>
+      <li value="6">I were you</li>
+      <li value="8">Scattered rains</li>
+      <li value="9">Our inner space</li>
+      <li value="11">When comes greatness</li>
+      <li value="13">Kusa’s smell</li>
     </ol>
   </article>
   <footer>
     <p>
-      Kusa (born 8. ang Xingtian) is a Beijing-based developer at
-      <a href="https://www.douban.com">6.</a> He writes
-      <a href="https://kusai.bearblog.dev">4.</a>
-      articles using 7., draws icons on <a href="../sketchbook">2.</a>
+      Kusa (born 2. ang Xingtian) is a Beijing-based developer at
+      <a href="https://www.douban.com">9.</a> He writes
+      <a href="https://kusai.bearblog.dev">13.</a>
+      articles using 5., draws icons in <a href="../sketchbook">3.</a>
     </p>
     <p>Find him on this <a href="../kusazh#en">1.</a></p>
   </footer>
@@ -322,18 +358,19 @@
       input.addEventListener('input', () => {
         [
           ['.d1', 'METAVERSE', '../kusazh#en'],
-          ['.a2', 'SKETCHBOOK', '../sketchbook'],
-          ['.d3', 'BOARDING', '../boarding'],
-          ['.d4', 'KUSAI', 'https://kusai.bearblog.dev'],
-          ['.d5', 'SHOWERS', 'https://rose-colo.red/showers'],
-          ['.d6', 'DOUBAN', 'https://www.douban.com'],
-          ['.a7', 'HANZI', '../hanzi'],
-          ['.d8', 'ZH', '../zh'],
-          ['.d9', 'IF', '../if'],
-          ['.a10', 'SOSO', '../so-so'],
-          ['.a11', 'PILL', '../pill'],
-          ['.d12', 'LATE', 'https://rose-colo.red/late'],
-          ['.a13', 'GITHUB', 'https://www.github.com/kusazh'],
+          ['.d2', 'ZH', '../zh'],
+          ['.a3', 'SKETCHBOOK', '../sketchbook'],
+          ['.d4', 'BOARDING', '../boarding'],
+          ['.a5', 'HANZI', '../hanzi'],
+          ['.d6', 'IF', '../if'],
+          ['.a7', 'URL', '../url'],
+          ['.d8', 'SHOWERS', 'https://rose-colo.red/showers'],
+          ['.d9', 'DOUBAN', 'https://www.douban.com'],
+          ['.a10', 'PILL', '../pill'],
+          ['.d11', 'LATE', 'https://rose-colo.red/late'],
+          ['.a12', 'SOSO', '../so-so'],
+          ['.d13', 'KUSAI', 'https://kusai.bearblog.dev'],
+          ['.a14', 'GITHUB', 'https://www.github.com/kusazh'],
         ].forEach(([cls, answer, href]) => {
           const word = Array.from(document.querySelectorAll(cls));
 
