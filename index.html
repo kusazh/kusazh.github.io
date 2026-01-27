@@ -337,7 +337,7 @@
         ].forEach(([cls, answer, href]) => {
           const word = Array.from(document.querySelectorAll(cls));
 
-          if (word.map(i => i.value.toUpperCase()).join('') === answer) {
+          if (word.map(ch => ch.value.toUpperCase()).join('') === answer) {
             const link = document.createElement('a');
             link.href = href;
             if (cls.includes('d')) {
@@ -346,9 +346,16 @@
               link.innerHTML = answer.split('').map(ch => `<span>${ch}</span>`).join('');
             }
             word[0].after(link);
-            word.forEach(i => { i.type = 'hidden'; i.disabled = true; });
-          } else if (input.value.length === 1 && i < inputs.length - 1) {
-            inputs[i + 1].focus();
+            word.forEach(i => { i.type = 'hidden'; });
+          } else if (input.value.length === 1) {
+            while (i < inputs.length - 1) {
+              const next = inputs[i + 1];
+              if (next.type !== 'hidden') {
+                next.focus();
+                break;
+              }
+              i++;
+            }
           }
         });
       });
