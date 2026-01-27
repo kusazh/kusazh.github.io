@@ -1,227 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FFFFFF" />
-    <title>kusai</title>
-    <style type="text/css">
-      html,
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FFFFFF" />
+  <title>kusai</title>
+  <style type="text/css">
+    body {
+      width: 22.5rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    body * {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+      font-size: 1rem;
+    }
+
+    header {
+      padding-top: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    header img {
+      width: 3rem;
+      height: auto;
+    }
+
+    table {
+      border: 1px solid black;
+      border-collapse: collapse;
+      margin: 0 calc(-2rem - 29px) 2rem 0;
+    }
+
+    input,
+    td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    input {
+      color: gray;
+      width: 1.5rem;
+      height: 1.5rem;
+      text-transform: uppercase;
+      border: none;
+    }
+
+    td {
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid black;
+      position: relative;
+    }
+
+    td.empty {
+      background-color: gray;
+    }
+
+    td::before {
+      content: attr(data-num);
+      position: absolute;
+      top: 0.1rem;
+      left: 0.1rem;
+      font-size: 0.75rem;
+      z-index: 3;
+    }
+
+    span {
+      display: inline-block;
+      background-color: white;
+      width: 2rem;
+      height: 1.5rem;
+      margin: 1.5px 1.5px 3px 1.5px;
+      vertical-align: -0.5rem;
+    }
+
+    h1,
+    li {
+      white-space: nowrap;
+    }
+
+    h1,
+    ol {
+      margin: 0 0 0.5rem 0;
+    }
+
+    ol {
+      padding: 0 0 0 1rem;
+    }
+
+    a {
+      color: initial;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    td a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    a:hover {
+      color: orange;
+      z-index: 2;
+    }
+
+    article {
+      column-count: 2;
+    }
+
+    article,
+    footer {
+      margin: 0;
+    }
+
+    footer::before {
+      content: "—";
+    }
+
+    footer {
+      color: gray;
+    }
+
+    @media screen and (max-width: 25.5rem) {
       body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-        font-size: 10vw;
-        overflow: hidden;
+        width: auto;
       }
+    }
+  </style>
+</head>
 
-      body * {
-        margin: 0;
-        line-height: 1.2;
-      }
+<body>
+  <header>
+    <img src="images/logo.svg" alt="Logo" />
+  </header>
+  <table>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td data-num="1"><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td data-num="2"><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1 a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="3"><input class="a2 d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a2" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="4"><input class="a2 d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td data-num="5"><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="6"><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td data-num="7"><input class="d5 a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1 a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a7" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="8"><input class="a7 d8" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="9"><input class="a7 d9" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="10"><input class="a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d4 a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d6 a10" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td><input class="d8" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d9" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d4" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td data-num="11"><input class="a11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d3 a11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="12"><input class="a11 d12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d3" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td><input class="d12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td><input class="d6" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td><input class="d5" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d1" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td data-num="13"><input class="d3 a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="d12 a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td><input class="a13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td><input class="d12" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+  </table>
+  <article>
+    <h1>Across</h1>
+    <ol>
+      <li value="2">A book Figma hates.</li>
+      <li value="7">Chinese characters.</li>
+      <li value="10">Neither good nor bad.</li>
+      <li value="11">Red or blue.</li>
+      <li value="13">Where host this page.</li>
+      <br>
+      <br>
+      <br>
+    </ol>
+    <h1>Down</h1>
+    <ol>
+      <li value="1">Verse of a verse.</li>
+      <li value="3">A pass to be printed.</li>
+      <li value="4">Kusa’s smell.</li>
+      <li value="5">Scattered rains.</li>
+      <li value="6">Our Inner Space.</li>
+      <li value="8">Ong Wen.</li>
+      <li value="9">I were you.</li>
+      <li value="12">When greatness happens.</li>
+    </ol>
+  </article>
+  <footer>
+    <p>
+      Kusa (born 7. ang Xingtian) is a Beijing-based developer at
+      <a href="https://www.douban.com">6.</a> He writes
+      <a href="https://kusai.bearblog.dev">4.</a>
+      articles in 8., draw icons on <a href="../sketchbook">2.</a>
+    </p>
+    <p>Find him on this <a href="../kusazh#en">1.</a></p>
+  </footer>
+  <script>
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach((input, i) => {
+      input.addEventListener('input', () => {
+        [
+          ['.d1', 'METAVERSE', '../metaverse'],
+          ['.a2', 'SKETCHBOOK', '../sketchbook'],
+          ['.d3', 'BOARDING', '../boarding'],
+          ['.d4', 'KUSAI', 'https://kusai.bearblog.dev'],
+          ['.d5', 'SHOWERS', 'https://rose-colo.red/showers'],
+          ['.d6', 'DOUBAN', 'https://www.douban.com'],
+          ['.a7', 'HANZI', '../hanzi'],
+          ['.d8', 'ZH', '../zh'],
+          ['.d9', 'IF', '../if'],
+          ['.a10', 'SOSO', '../so-so'],
+          ['.a11', 'PILL', '../pill'],
+          ['.d12', 'LATE', 'https://rose-colo.red/late'],
+          ['.a13', 'GITHUB', 'https://www.github.com/kusazh'],
+        ].forEach(([cls, answer, href]) => {
+          const word = Array.from(document.querySelectorAll(cls));
 
-      label img {
-        position: absolute;
-        top: 0;
-        cursor: pointer;
-        z-index: 1;
-      }
+          if (word.map(i => i.value.toUpperCase()).join('') === answer) {
+            const link = document.createElement('a');
+            link.href = href;
+            if (cls.includes('d')) {
+              link.innerHTML = answer.split('').map(ch => `<span>${ch}</span>`).join('<br>');
+            } else {
+              link.innerHTML = answer.split('').map(ch => `<span>${ch}</span>`).join('');
+            }
+            word[0].replaceWith(link);
+            word.slice(1, word.length).forEach(i => { i.type = 'hidden'; i.disabled = true; });
+          } else if (input.value.length === 1 && i < inputs.length - 1) {
+            inputs[i + 1].focus();
+          }
+        });
+      });
+    });
+  </script>
+</body>
 
-      header,
-      main,
-      h2 {
-        height: 100%;
-      }
-
-      header,
-      h2 {
-        display: flex;
-        align-items: center;
-      }
-
-      h1,
-      h2 {
-        font-size: 1rem;
-        font-weight: normal;
-      }
-
-      h2 {
-        background-position: center right 1.5rem;
-        background-repeat: no-repeat;
-        background-size: 3rem;
-        scroll-snap-align: start;
-      }
-
-      h2 a {
-        width: 100%;
-        margin: 0 1.5rem 0 4rem;
-      }
-
-      p,
-      img {
-        font-size: calc(0.1rem + 12px);
-        text-align: center;
-        opacity: 0.2;
-        scroll-snap-align: none;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      a:lang(ja) {
-        font-size: 90%;
-      }
-
-      img {
-        width: calc(0.2rem + 18px);
-        left: calc(50% - 0.1rem - 9px);
-        margin-top: 1rem;
-      }
-
-      header,
-      img,
-      footer p {
-        position: fixed;
-      }
-
-      header,
-      main,
-      footer {
-        transition: opacity 0.5s ease-in-out;
-      }
-
-      header,
-      main {
-        opacity: 1;
-      }
-
-      header {
-        margin-left: 1.5rem;
-      }
-
-      main {
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-        scroll-snap-type: y mandatory;
-      }
-
-      main p {
-        margin-top: calc(-1rem - 14.4px);
-      }
-
-      footer {
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      footer p {
-        width: 100%;
-        top: calc(100% - 1rem - 14.4px);
-        text-align: center;
-      }
-
-      .me {
-        background-image: url("images/me.png");
-      }
-
-      .text {
-        margin-bottom: calc(-1rem - 28.8px);
-        background-image: url("images/text.png");
-      }
-
-      .sketchbook {
-        background-image: url("images/sketchbook.png");
-      }
-
-      .hanzi {
-        background-image: url("images/hanzi.png");
-      }
-
-      .so-so {
-        background-image: url("images/so-so.png");
-      }
-
-      .pill {
-        background-image: url("images/pill.png");
-      }
-
-      .boarding {
-        background-image: url("images/boarding.png");
-      }
-
-      .more {
-        background-image: url("images/more.png");
-      }
-
-      #toggle:checked ~ header,
-      #toggle:checked ~ main {
-        opacity: 0;
-      }
-
-      #toggle:checked ~ footer {
-        opacity: 1;
-        pointer-events: auto;
-      }
-    </style>
-  </head>
-
-  <body>
-    <input type="checkbox" id="toggle" hidden />
-    <label for="toggle"><img alt="logo" src="images/logo.svg" /></label>
-    <header>
-      <h1>kusai</h1>
-    </header>
-    <main>
-      <h2 class="me" id="me">
-        <a href="./me">me</a>
-      </h2>
-      <p>“Personal Home Page”</p>
-      <h2 class="text" id="text">
-        <a href="https://kusai.bearblog.dev">text</a>
-      </h2>
-      <p>
-        “Chinese Articles”
-        <br />
-        <small><i>Powered by Bear</i></small>
-      </p>
-      <h2 class="sketchbook" id="sketchbook">
-        <a href="./sketchbook">sketchbook</a>
-      </h2>
-      <p>“Design Works”</p>
-      <h2 class="hanzi" id="hanzi">
-        <a href="./hanzi">hanzi</a>
-      </h2>
-      <p>“A Hanzi Suika Game”</p>
-      <h2 class="so-so" id="so-so">
-        <a href="./so-so">so-so</a>
-      </h2>
-      <p>“Playable Poems”</p>
-      <h2 class="pill" id="pill">
-        <a href="./pill">pill</a>
-      </h2>
-      <p>“Poetic Dope”</p>
-      <h2 class="boarding" id="boarding">
-        <a href="./boarding">boarding</a>
-      </h2>
-      <p>“Boarding Pass”</p>
-      <h2 class="more" id="more">
-        <a href="https://github.com/kusazh"><i>more</i></a>
-      </h2>
-      <p>“GitHub Profile Page”</p>
-    </main>
-    <footer>
-      <p>
-        Made by <a href="./me">Kusa Zhang Xingtian</a>. Images by
-        <a lang="ja" href="https://www.irasutoya.com">いらすとや</a>.
-      </p>
-    </footer>
-  </body>
 </html>
