@@ -14,7 +14,6 @@
     body {
       width: 22.5rem;
       margin: 0 auto;
-      padding: 0 1.5rem;
     }
 
     body * {
@@ -24,25 +23,25 @@
 
     header {
       padding-top: 2.5rem;
-      margin-bottom: 2rem;
       text-align: center;
     }
 
     header img {
-      width: 3rem;
+      width: 2rem;
       height: auto;
     }
 
     table {
-      border: 1px solid black;
       border-collapse: collapse;
-      margin: 0 calc(-2rem - 29px) 2rem 0;
+      margin: 2rem 0 2rem 2.625rem;
     }
 
     input,
     td {
       text-align: center;
       vertical-align: middle;
+      margin: 0;
+      padding: 0;
     }
 
     input {
@@ -54,8 +53,8 @@
     }
 
     td {
-      width: 2rem;
-      height: 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
       border: 1px solid black;
       position: relative;
     }
@@ -76,10 +75,9 @@
     span {
       display: inline-block;
       background-color: white;
-      width: 2rem;
-      height: 1.5rem;
-      margin: 1.5px 1.5px 3px 1.5px;
-      vertical-align: -0.5rem;
+      width: calc(1.5rem - 4px);
+      height: 1.25rem;
+      margin: 2.5px;
     }
 
     h1,
@@ -129,12 +127,6 @@
 
     footer {
       color: gray;
-    }
-
-    @media screen and (max-width: 25.5rem) {
-      body {
-        width: auto;
-      }
     }
   </style>
 </head>
@@ -282,7 +274,7 @@
       <li value="2">A book Figma hates.</li>
       <li value="7">Chinese characters.</li>
       <li value="10">Neither good nor bad.</li>
-      <li value="11">Red or blue.</li>
+      <li value="11">Red or blue, or pink.</li>
       <li value="13">Where host this page.</li>
       <br>
       <br>
@@ -290,7 +282,7 @@
     </ol>
     <h1>Down</h1>
     <ol>
-      <li value="1">Verse of a verse.</li>
+      <li value="1">Verse of verses.</li>
       <li value="3">A pass to be printed.</li>
       <li value="4">Kusa’s smell.</li>
       <li value="5">Scattered rains.</li>
@@ -302,10 +294,10 @@
   </article>
   <footer>
     <p>
-      Kusa (born 7. ang Xingtian) is a Beijing-based developer at
+      Kusa (born 8. ang Xingtian) is a Beijing-based developer at
       <a href="https://www.douban.com">6.</a> He writes
       <a href="https://kusai.bearblog.dev">4.</a>
-      articles in 8., draw icons on <a href="../sketchbook">2.</a>
+      articles using 7., draws icons on <a href="../sketchbook">2.</a>
     </p>
     <p>Find him on this <a href="../kusazh#en">1.</a></p>
   </footer>
@@ -314,7 +306,7 @@
     inputs.forEach((input, i) => {
       input.addEventListener('input', () => {
         [
-          ['.d1', 'METAVERSE', '../metaverse'],
+          ['.d1', 'METAVERSE', '../kusazh#en'],
           ['.a2', 'SKETCHBOOK', '../sketchbook'],
           ['.d3', 'BOARDING', '../boarding'],
           ['.d4', 'KUSAI', 'https://kusai.bearblog.dev'],
@@ -338,8 +330,8 @@
             } else {
               link.innerHTML = answer.split('').map(ch => `<span>${ch}</span>`).join('');
             }
-            word[0].replaceWith(link);
-            word.slice(1, word.length).forEach(i => { i.type = 'hidden'; i.disabled = true; });
+            word[0].after(link);
+            word.forEach(i => { i.type = 'hidden'; i.disabled = true; });
           } else if (input.value.length === 1 && i < inputs.length - 1) {
             inputs[i + 1].focus();
           }
