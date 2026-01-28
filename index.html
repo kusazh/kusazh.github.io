@@ -41,8 +41,12 @@
 
     a {
       color: initial;
-      white-space: nowrap;
       text-decoration: none;
+    }
+
+    a,
+    li {
+      white-space: nowrap;
     }
 
     a:hover {
@@ -127,12 +131,9 @@
       break-after: column;
     }
 
-    li {
-      white-space: nowrap;
-    }
-
     footer {
       color: gray;
+      margin-right: -0.5rem;
     }
 
     footer::before {
@@ -140,12 +141,14 @@
     }
 
     @media screen and (max-width: 24.5rem) {
-      body {
-        width: auto;
+      html {
+        font-size: 4vw;
       }
 
-      li {
-        white-space: normal;
+      @supports (font-size: round(4vw, 1px)) {
+        html {
+          font-size: round(4vw, 1px);
+        }
       }
     }
   </style>
