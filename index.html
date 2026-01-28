@@ -50,6 +50,10 @@
       z-index: 2;
     }
 
+    a.ch:hover {
+      color: green;
+    }
+
     input,
     td {
       text-align: center;
@@ -359,6 +363,7 @@
         [
           ['.d1', 'METAVERSE', '../kusazh#en'],
           ['.d2', 'ZH', '../zh'],
+          ['.d2', 'CH', ''],
           ['.a3', 'SKETCHBOOK', '../sketchbook'],
           ['.d4', 'BOARDING', '../boarding'],
           ['.a5', 'HANZI', '../hanzi'],
@@ -376,7 +381,13 @@
 
           if (word.map(ch => ch.value.toUpperCase()).join('') === answer) {
             const link = document.createElement('a');
-            link.href = href;
+            if (answer === 'CH') {
+              link.classList.add('ch');
+              const p = document.getElementsByTagName('p')[0];
+              p.innerHTML = p.innerHTML.replace('X', 'Hs').replace('Beij', 'Pek').replace('.,', '. in Taiwanese Mandarin,');
+            } else {
+              link.href = href;
+            }
             if (cls.includes('d')) {
               link.innerHTML = answer.split('').map(ch => `<span>${ch}</span>`).join('<br>');
             } else {
