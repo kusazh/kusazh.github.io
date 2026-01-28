@@ -361,40 +361,40 @@
   </footer>
   <script>
     const inputs = document.querySelectorAll('input');
+    const answers = {
+      'd1': [document.querySelectorAll('.d1'), 'METAVERSE', '../kusazh#en'],
+      'd2': [document.querySelectorAll('.d2'), 'ZH', '../zh'],
+      'a3': [document.querySelectorAll('.a3'), 'SKETCHBOOK', '../sketchbook'],
+      'd4': [document.querySelectorAll('.d4'), 'BOARDING', '../boarding'],
+      'a5': [document.querySelectorAll('.a5'), 'HANZI', '../hanzi'],
+      'd6': [document.querySelectorAll('.d6'), 'IF', '../if'],
+      'a7': [document.querySelectorAll('.a7'), 'URL', '../url'],
+      'd8': [document.querySelectorAll('.d8'), 'SHOWERS', 'https://rose-colo.red/showers'],
+      'd9': [document.querySelectorAll('.d9'), 'DOUBAN', 'https://www.douban.com'],
+      'a10': [document.querySelectorAll('.a10'), 'PILL', '../pill'],
+      'd11': [document.querySelectorAll('.d11'), 'LATE', 'https://rose-colo.red/late'],
+      'a12': [document.querySelectorAll('.a12'), 'SOSO', '../so-so'],
+      'd13': [document.querySelectorAll('.d13'), 'KUSAI', 'https://kusai.bearblog.dev'],
+      'a14': [document.querySelectorAll('.a14'), 'GITHUB', 'https://www.github.com/kusazh'],
+    };
     inputs.forEach((input, i) => {
       input.addEventListener('input', () => {
-        [
-          ['.d1', 'METAVERSE', '../kusazh#en'],
-          ['.d2', 'ZH', '../zh'],
-          ['.d2', 'CH', ''],
-          ['.a3', 'SKETCHBOOK', '../sketchbook'],
-          ['.d4', 'BOARDING', '../boarding'],
-          ['.a5', 'HANZI', '../hanzi'],
-          ['.d6', 'IF', '../if'],
-          ['.a7', 'URL', '../url'],
-          ['.d8', 'SHOWERS', 'https://rose-colo.red/showers'],
-          ['.d9', 'DOUBAN', 'https://www.douban.com'],
-          ['.a10', 'PILL', '../pill'],
-          ['.d11', 'LATE', 'https://rose-colo.red/late'],
-          ['.a12', 'SOSO', '../so-so'],
-          ['.d13', 'KUSAI', 'https://kusai.bearblog.dev'],
-          ['.a14', 'GITHUB', 'https://www.github.com/kusazh'],
-        ].forEach(([cls, answer, href]) => {
-          const word = Array.from(document.querySelectorAll(cls));
-
-          if (word.map(ch => ch.value.toUpperCase()).join('') === answer) {
+        input.classList.forEach(cls => {
+          const [word, answer, href] = answers[cls];
+          const guess = Array.from(word).map(i => i.value.toUpperCase()).join('');
+          if (guess === answer || guess === 'CH' && answer === 'ZH') {
             const link = document.createElement('a');
-            if (answer === 'CH') {
-              link.classList.add('ch');
-              const p = document.getElementsByTagName('p')[0];
-              p.innerHTML = p.innerHTML.replace('X', 'Hs').replace('Beij', 'Pek').replace('.,', '. in Taiwanese Mandarin,');
-            } else {
+            if (guess === answer) {
               link.href = href;
+            } else {
+              link.classList.add('ch');
+              const p = document.querySelectorAll('p')[0];
+              p.innerHTML = p.innerHTML.replace('X', 'Hs').replace('Beij', 'Pek').replace('.,', '. in Taiwanese Mandarin,');
             }
             if (cls.includes('d')) {
-              link.innerHTML = answer.split('').map(ch => `<span>${ch}</span>`).join('<br>');
+              link.innerHTML = guess.split('').map(ch => `<span>${ch}</span>`).join('<br>');
             } else {
-              link.innerHTML = answer.split('').map(ch => `<span>${ch}</span>`).join('');
+              link.innerHTML = guess.split('').map(ch => `<span>${ch}</span>`).join('');
             }
             word[0].after(link);
             word.forEach(i => { i.type = 'hidden'; });
