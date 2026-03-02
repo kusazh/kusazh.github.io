@@ -12,8 +12,8 @@
   <title>kusai</title>
   <style type="text/css">
     body {
-      width: 22.5rem;
-      padding: 12px;
+      width: 23rem;
+      padding: 8px;
       margin: 0 auto;
     }
 
@@ -25,7 +25,7 @@
     }
 
     header {
-      margin-top: 1rem;
+      margin: 1rem 0;
       text-align: center;
     }
 
@@ -36,7 +36,7 @@
 
     table {
       border-collapse: collapse;
-      margin: 1.5rem auto;
+      margin: 1rem auto;
     }
 
     a {
@@ -107,7 +107,8 @@
       background-color: white;
       width: 1rem;
       height: 1rem;
-      margin: 0.25rem calc(0.25rem + 1px) calc(0.25rem + 1px) 0.25rem;
+      padding: 0.25rem;
+      margin: 0 1px 1px 0;
       line-height: 1rem;
     }
 
@@ -125,13 +126,12 @@
     }
 
     ol {
-      padding-left: 1.5rem;
+      margin-left: 1.5rem;
       break-after: column;
     }
 
     footer {
       color: gray;
-      margin-right: -0.5rem;
     }
 
     footer::before {
@@ -279,7 +279,7 @@
       <td data-num="14"><input class="d4 a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d11 a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td><input class="a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
+      <td data-num="15"><input class="a14 d15" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d13 a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="a14" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
     </tr>
@@ -293,7 +293,7 @@
       <td class="empty"></td>
       <td class="empty"></td>
       <td><input class="d11" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
-      <td class="empty"></td>
+      <td><input class="d15" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
     </tr>
@@ -307,7 +307,7 @@
       <td class="empty"></td>
       <td class="empty"></td>
       <td class="empty"></td>
-      <td class="empty"></td>
+      <td><input class="d15" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
     </tr>
@@ -321,7 +321,7 @@
       <td class="empty"></td>
       <td class="empty"></td>
       <td class="empty"></td>
-      <td class="empty"></td>
+      <td><input class="d15" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td><input class="d13" type="text" maxlength="1" pattern="[A-Za-z]" /></td>
       <td class="empty"></td>
     </tr>
@@ -346,6 +346,7 @@
       <li value="9">Our inner space</li>
       <li value="11">When comes greatness</li>
       <li value="13">Kusa’s smell</li>
+      <li value="15">What holds a pen</li>
     </ol>
   </article>
   <footer>
@@ -375,6 +376,7 @@
       'a12': ['SOSO', '../so-so'],
       'd13': ['KUSAI', 'https://kusai.bearblog.dev'],
       'a14': ['GITHUB', 'https://www.github.com/kusazh'],
+      'd15': ['HAND', 'https://rose-colo.red/hand'],
     };
     const words = {};
     inputs.forEach((input, i) => {
