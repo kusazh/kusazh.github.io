@@ -386,13 +386,25 @@
       'd15': ['HAND', 'https://rose-colo.red/hand'],
     };
     const words = {};
-    inputs.forEach((input, i) => {
+    let activeWord = null;
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        const classes = [...input.classList];
+        if (!classes.includes(activeWord)) {
+          activeWord = classes[0];
+        }
+      });
       input.classList.forEach(cls => {
         if (!words[cls]) { words[cls] = []; };
         words[cls].push(input);
       });
       input.addEventListener('input', () => {
-        input.classList.forEach(cls => {
+        let moved = false;
+        const classes = [...input.classList];
+        const activeClasses = classes.includes(activeWord)
+          ? [activeWord, ...classes.filter(cls => cls !== activeWord)]
+          : classes;
+        activeClasses.forEach(cls => {
           const [answer, href] = answers[cls];
           const word = words[cls];
           const guess = word.map(i => i.value.toUpperCase()).join('');
@@ -411,12 +423,13 @@
             }
             word[0].after(link);
             word.forEach(i => { i.type = 'hidden'; });
-          } else if (input.value.length === 1) {
-            for (let j = i + 1; j < inputs.length; j++) {
-              if (inputs[j].type !== 'hidden') {
-                inputs[j].focus();
-                break;
-              }
+          } else if (!moved && input.value.length === 1) {
+            const index = word.indexOf(input);
+            const next = word.slice(index + 1).find(i => i.type !== 'hidden');
+            if (next) {
+              activeWord = cls;
+              next.focus();
+              moved = true;
             }
           }
         });
